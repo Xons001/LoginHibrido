@@ -14,13 +14,13 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
 
   for (var i = 0; i < usuarios.length; i++) {
-    //usuarios[i]['name'] == req.body.name &&  ==
     if(usuarios[i]['name'] == req.body.nombre &&usuarios[i]['pass'] == req.body.pass){
       console.log("usuario correcto!!!")
       res.send('Usuario Correcto!  Nombre: ' + req.body.nombre + ' => Password: ' + req.body.pass);
+      return;
     }
   }
-
+  res.send("usuario incorrecto");
 });
 
 app.listen(3000, function() {
