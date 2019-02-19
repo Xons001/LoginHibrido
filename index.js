@@ -37,3 +37,6 @@ app.get('/api/login/:user/:pass', function (req, res) {
 app.listen(3000, function() {
     console.log('Example app listening on port 3000!');
 });
+
+var port = process.env.PORT||5000;
+app.listen(port, () => console.log('Ejemplo de la app en el puerto ' + port));
